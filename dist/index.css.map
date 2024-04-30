@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/index.css"],
+  "sourcesContent": ["/*\n! Navbar\n*/\n\n@media (max-width: 1300px) and (min-width: 992px) {\n    .navbar_text, .navbar_brand-logo-text {\n      display: none;\n    }\n    .navbar_container {\n        width : 2.37rem;\n    }\n    .navbar_menu-link.w--current, .navbar_menu-link:hover {\n        padding-right:0.3125rem ;\n        padding-left:0.3125rem ;\n    }\n\n    .navbar_toggle-size {\n        display: none;\n    }\n  }\n  \n  .w-mod-js.dark-mode .navbar_icon-wrapper.is-darkmode {\n    transform: rotateZ(180deg);\n  }\n\n  .custom-padding {\n    padding-right: 0.3125rem !important;\n    padding-left: 0.3125rem !important;\n  }\n  "],
+  "mappings": ";AAIA,OAAO,CAAC,SAAS,EAAE,QAAQ,IAAI,CAAC,SAAS,EAAE;AACvC,GAAC;AAAA,EAAa,CAAC;AACb,aAAS;AACX;AACA,GAAC;AACG,WAAQ;AACZ;AACA,GAAC,gBAAgB,CAAC;AAAA,EAAY,CAA7B,gBAA8C;AAC3C,mBAAc;AACd,kBAAa;AACjB;AAEA,GAAC;AACG,aAAS;AACb;AACF;AAEA,CAAC,QAAQ,CAAC,UAAU,CAAC,mBAAmB,CAAC;AACvC,aAAW,QAAQ;AACrB;AAEA,CAAC;AACC,iBAAe;AACf,gBAAc;AAChB;",
+  "names": []
+}
