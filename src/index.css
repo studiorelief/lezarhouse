@@ -3,28 +3,29 @@
 */
 
 @media (max-width: 1300px) and (min-width: 992px) {
-    .navbar_text, .navbar_brand-logo-text {
-      display: none;
-    }
-    .navbar_container {
-        width : 2.37rem;
-    }
-    .navbar_menu-link.w--current, .navbar_menu-link:hover {
-        padding-right:0.3125rem ;
-        padding-left:0.3125rem ;
-    }
-
-    .navbar_toggle-size {
-        display: none;
-    }
+  .navbar_text,
+  .navbar_brand-logo-text {
+    display: none;
   }
-  
-  .w-mod-js.dark-mode .navbar_icon-wrapper.is-darkmode {
-    transform: rotateZ(180deg);
+  .navbar_container {
+    width: 2.37rem;
+  }
+  .navbar_menu-link.w--current,
+  .navbar_menu-link:hover {
+    padding-right: 0.3125rem;
+    padding-left: 0.3125rem;
   }
 
-  .custom-padding {
-    padding-right: 0.3125rem !important;
-    padding-left: 0.3125rem !important;
+  .navbar_toggle-size {
+    display: none;
   }
-  
+}
+
+.w-mod-js.dark-mode .navbar_icon-wrapper.is-darkmode {
+  transform: rotateZ(180deg);
+}
+
+.custom-padding {
+  padding-right: 0.3125rem !important;
+  padding-left: 0.3125rem !important;
+}
