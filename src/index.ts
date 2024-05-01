@@ -7,4 +7,6 @@ window.Webflow ||= [];
 window.Webflow.push(() => {
   darkModeContent();
   toggleSize();
+
+  alert('hello');
 });
