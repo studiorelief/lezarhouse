@@ -1,5 +1,5 @@
 {
-  "name": "@studiorelief/lezarhouse",
+  "name": "@studiorelief/lezarhousetesting",
   "version": "0.0.0",
   "description": "Lezar House website",
   "homepage": "https://github.com/studiorelief/lezarhouse",
@@ -52,7 +52,8 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@finsweet/ts-utils": "^0.40.0"
+    "@finsweet/ts-utils": "^0.40.0",
+    "swiper": "^11.1.1"
   },
   "engines": {
     "pnpm": ">=8"
