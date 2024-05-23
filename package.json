@@ -1,5 +1,5 @@
 {
-  "name": "@studiorelief/lezarhousetesting",
+  "name": "@studiorelief/lezarhouse",
   "version": "0.0.0",
   "description": "Lezar House website",
   "homepage": "https://github.com/studiorelief/lezarhouse",
@@ -53,6 +53,7 @@
   },
   "dependencies": {
     "@finsweet/ts-utils": "^0.40.0",
+    "gsap": "^3.12.5",
     "swiper": "^11.1.1"
   },
   "engines": {

@@ -29,3 +29,140 @@
   padding-right: 0.3125rem !important;
   padding-left: 0.3125rem !important;
 }
+
+/*
+! Slider / Generique
+*/
+
+/* .swiper.is-c--slider {
+  overflow: visible;
+} */
+
+.swiper-button-disabled {
+  opacity: 0.25;
+}
+
+/*
+! Slider / Studio Lab
+*/
+
+/* swiper linear loop */
+.swiper.is-studio-lab .swiper-wrapper {
+  transition-timing-function: linear;
+}
+
+/*
+! Cards Gradient setup
+*/
+
+.c--slider_gradient-blur {
+  position: absolute;
+  z-index: 1;
+  inset: 0 0 0;
+  height: 85%;
+  pointer-events: none;
+}
+.c--slider_gradient-blur > div,
+.c--slider_gradient-blur::before,
+.c--slider_gradient-blur::after {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--size-border--border-radius-small);
+}
+
+.c--slider_gradient-blur::before {
+  content: '';
+  z-index: 1;
+  backdrop-filter: blur(0.5px);
+  mask: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 12.5%,
+    rgba(0, 0, 0, 1) 25%,
+    rgba(0, 0, 0, 0) 37.5%
+  );
+}
+.c--slider_gradient-blur÷÷≠≠≠÷ > div:nth-of-type(1) {
+  z-index: 2;
+  backdrop-filter: blur(1px);
+  mask: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 12.5%,
+    rgba(0, 0, 0, 1) 25%,
+    rgba(0, 0, 0, 1) 37.5%,
+    rgba(0, 0, 0, 0) 50%
+  );
+}
+.c--slider_gradient-blur > div:nth-of-type(2) {
+  z-index: 3;
+  backdrop-filter: blur(2px);
+  mask: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 25%,
+    rgba(0, 0, 0, 1) 37.5%,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0) 62.5%
+  );
+}
+
+.c--slider_gradient-blur > div:nth-of-type(3) {
+  z-index: 4;
+  backdrop-filter: blur(4px);
+  mask: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 37.5%,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 1) 62.5%,
+    rgba(0, 0, 0, 0) 75%
+  );
+}
+
+.c--slider_gradient-blur > div:nth-of-type(4) {
+  z-index: 5;
+  backdrop-filter: blur(8px);
+  mask: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 1) 62.5%,
+    rgba(0, 0, 0, 1) 75%,
+    rgba(0, 0, 0, 0) 87.5%
+  );
+}
+
+.c--slider_gradient-blur > div:nth-of-type(5) {
+  z-index: 6;
+  backdrop-filter: blur(16px);
+  mask: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 62.5%,
+    rgba(0, 0, 0, 1) 75%,
+    rgba(0, 0, 0, 1) 87.5%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.c--slider_gradient-blur > div:nth-of-type(6) {
+  z-index: 7;
+  backdrop-filter: blur(24px);
+  mask: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 75%,
+    rgba(0, 0, 0, 1) 87.5%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.c--slider_gradient-blur::after {
+  content: '';
+  z-index: 8;
+  backdrop-filter: blur(32px);
+  mask: linear-gradient(to bottom, rgba(0, 0, 0, 0) 87.5%, rgba(0, 0, 0, 1) 100%);
+}
+
+/*
+! Slider / Testimonials
+*/
+
+.swiper-navigation.is-c--artists-testomials > .swiper-button-disabled {
+  opacity: 0;
+}
