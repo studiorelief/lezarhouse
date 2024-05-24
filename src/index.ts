@@ -3,8 +3,8 @@ import './index.css';
 import { autoTabs } from '$utils/autotabs';
 import { darkModeContent } from '$utils/darkmode';
 import { loopArtists, loopBaseline } from '$utils/gsap';
-import { loadScript } from '$utils/loadscript';
 import { toggleSize } from '$utils/navbar';
+import { loadScript } from '$utils/scripts';
 import { swiperLab, swiperProject, swiperSlide, swiperTestimonials } from '$utils/swiper';
 import { cmsPlaylist, svgCms } from '$utils/tricks';
 

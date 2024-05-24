@@ -19,7 +19,6 @@ export function autoTabs(): void {
 
   // Start Tabs
   let tabTimeout: number | undefined;
-  let previousTab: HTMLElement | null = null;
 
   const resetLoader = (loader: HTMLElement) => {
     loader.style.transition = 'none';
@@ -37,6 +36,26 @@ export function autoTabs(): void {
     loader.style.opacity = '0';
   };
 
+  const changeTab = (currentTab: HTMLElement | null, nextTab: HTMLElement | null) => {
+    if (currentTab) {
+      currentTab.classList.remove('w--current');
+      const currentLoader = currentTab.querySelector(
+        '.lab-scene_loading-tab'
+      ) as HTMLElement | null;
+      if (currentLoader) {
+        stopLoader(currentLoader);
+      }
+    }
+
+    if (nextTab) {
+      nextTab.classList.add('w--current');
+      const nextLoader = nextTab.querySelector('.lab-scene_loading-tab') as HTMLElement | null;
+      if (nextLoader) {
+        resetLoader(nextLoader);
+      }
+    }
+  };
+
   const tabLoop = (): void => {
     tabTimeout = window.setTimeout(() => {
       const currentTab = document.querySelector(
@@ -46,28 +65,15 @@ export function autoTabs(): void {
 
       if (currentTab) {
         nextTab = currentTab.nextElementSibling as HTMLElement | null;
-        currentTab.classList.remove('w--current');
-        const currentLoader = currentTab.querySelector(
-          '.lab-scene_loading-tab'
-        ) as HTMLElement | null;
-        if (currentLoader) {
-          stopLoader(currentLoader);
-        }
       }
 
       if (!nextTab) {
         nextTab = document.querySelector('.lab-scene_tabs-link:first-child') as HTMLElement | null;
       }
 
-      if (nextTab) {
-        nextTab.classList.add('w--current');
-        const nextLoader = nextTab.querySelector('.lab-scene_loading-tab') as HTMLElement | null;
-        if (nextLoader) {
-          resetLoader(nextLoader);
-        }
-        // Manually dispatch the click event and prevent it from propagating
-        nextTab.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }));
-      }
+      changeTab(currentTab, nextTab);
+
+      tabLoop();
     }, 3000);
   };
 
@@ -76,23 +82,16 @@ export function autoTabs(): void {
   // Reset Loops and Loader on Click
   document.querySelectorAll('.lab-scene_tabs-link').forEach((button) => {
     button.addEventListener('click', (event) => {
+      event.preventDefault(); // Prevent the default action of the click
       event.stopPropagation(); // Prevent click event from propagating to other elements
       if (tabTimeout !== undefined) {
         clearTimeout(tabTimeout);
       }
-      if (previousTab) {
-        const previousLoader = previousTab.querySelector(
-          '.lab-scene_loading-tab'
-        ) as HTMLElement | null;
-        if (previousLoader) {
-          stopLoader(previousLoader);
-        }
-      }
-      const loader = button.querySelector('.lab-scene_loading-tab') as HTMLElement | null;
-      if (loader) {
-        resetLoader(loader);
-      }
-      previousTab = button as HTMLElement;
+      const currentTab = document.querySelector(
+        '.lab-scene_tabs-menu .w--current'
+      ) as HTMLElement | null;
+      const nextTab = button as HTMLElement;
+      changeTab(currentTab, nextTab);
       tabLoop();
     });
   });

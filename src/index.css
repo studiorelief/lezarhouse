@@ -166,3 +166,45 @@
 .swiper-navigation.is-c--artists-testomials > .swiper-button-disabled {
   opacity: 0;
 }
+
+/*
+! Slider / Parallax test
+*/
+
+.c--slider_background-image {
+  transition: transform 0.8s ease-out;
+}
+
+.a--c--slider-hover .c--slider_background-image-wrapper {
+  transition: transform 0.2s ease-out;
+}
+
+.a--c--slider-hover:hover .c--slider_background-image-wrapper {
+  transform: scale(1.1);
+}
+
+ .swiper-slide.swiper-slide-prev .is-parallax .c--slider_background-image {
+  transform: translateX(4rem);
+}
+
+ .swiper-slide.is-active .is-parallax .c--slider_background-image {
+  transform: translateX(2rem);
+}
+
+ .swiper-slide.swiper-slide-next .is-parallax .c--slider_background-image {
+  transform: translateX(0rem);
+}
+
+ .swiper-slide.swiper-slide-next + .swiper-slide .is-parallax .c--slider_background-image {
+  transform: translateX(-2rem);
+}
+
+ .swiper-slide.swiper-slide-next + .swiper-slide + .swiper-slide .is-parallax .c--slider_background-image {
+  transform: translateX(-4rem);
+}
+
+ .swiper-slide.swiper-slide-next + .swiper-slide + .swiper-slide + .swiper-slide .is-parallax .c--slider_background-image {
+  transform: translateX(-6rem);
+}
+
+

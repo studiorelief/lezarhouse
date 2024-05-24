@@ -16,6 +16,7 @@ export function swiperSlide() {
         slidesPerView: 'auto',
         spaceBetween: 40,
         centeredSlides: false,
+        parallax: true,
         mousewheel: {
           forceToAxis: true,
         },
@@ -24,7 +25,7 @@ export function swiperSlide() {
           prevEl: navigationContainer.querySelector('.swiper-left'),
         },
         slideActiveClass: 'is-active',
-        speed: 400,
+        speed: 800,
         effect: 'slide',
         slideEffect: {
           easeOut: 'ease-out',
