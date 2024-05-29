@@ -168,7 +168,7 @@
 }
 
 /*
-! Slider / Parallax test
+! Slider / Parallax on c--slider
 */
 
 .c--slider_background-image {
@@ -183,28 +183,52 @@
   transform: scale(1.1);
 }
 
- .swiper-slide.swiper-slide-prev .is-parallax .c--slider_background-image {
+.swiper-slide.swiper-slide-prev .is-parallax .c--slider_background-image {
   transform: translateX(4rem);
 }
 
- .swiper-slide.is-active .is-parallax .c--slider_background-image {
+.swiper-slide.is-active .is-parallax .c--slider_background-image {
   transform: translateX(2rem);
 }
 
- .swiper-slide.swiper-slide-next .is-parallax .c--slider_background-image {
+.swiper-slide.swiper-slide-next .is-parallax .c--slider_background-image {
   transform: translateX(0rem);
 }
 
- .swiper-slide.swiper-slide-next + .swiper-slide .is-parallax .c--slider_background-image {
+.swiper-slide.swiper-slide-next + .swiper-slide .is-parallax .c--slider_background-image {
   transform: translateX(-2rem);
 }
 
- .swiper-slide.swiper-slide-next + .swiper-slide + .swiper-slide .is-parallax .c--slider_background-image {
+.swiper-slide.swiper-slide-next
+  + .swiper-slide
+  + .swiper-slide
+  .is-parallax
+  .c--slider_background-image {
   transform: translateX(-4rem);
 }
 
- .swiper-slide.swiper-slide-next + .swiper-slide + .swiper-slide + .swiper-slide .is-parallax .c--slider_background-image {
+.swiper-slide.swiper-slide-next
+  + .swiper-slide
+  + .swiper-slide
+  + .swiper-slide
+  .is-parallax
+  .c--slider_background-image {
   transform: translateX(-6rem);
 }
 
+/*
+! Slider / Cross-fade test
+*/
 
+.c--project_top-infos {
+  transition:
+    opacity 0.8s ease-in-out,
+    transform 0.8s ease-out;
+  opacity: 0;
+  transform: translateX(-50%);
+}
+
+.swiper-slide.is-active .c--project_top-infos {
+  opacity: 1;
+  transform: translateX(0%);
+}

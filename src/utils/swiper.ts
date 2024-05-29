@@ -49,6 +49,7 @@ export function swiperProject() {
         slidesPerView: 'auto',
         spaceBetween: 40,
         centeredSlides: false,
+        parallax: true,
         mousewheel: {
           forceToAxis: true,
         },
@@ -59,7 +60,7 @@ export function swiperProject() {
           bulletActiveClass: 'swiper-pagination-bullet-custom-active',
         },
         slideActiveClass: 'is-active',
-        speed: 400,
+        speed: 800,
         effect: 'slide',
         slideEffect: {
           easeOut: 'ease-out',
@@ -93,7 +94,7 @@ export function swiperTestimonials() {
       loop: false,
       slidesPerView: '1',
       spaceBetween: 40,
-      speed: 400,
+      speed: 800,
       centeredSlides: false,
       mousewheel: {
         forceToAxis: true,

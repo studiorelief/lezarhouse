@@ -45,6 +45,14 @@ export function autoTabs(): void {
       if (currentLoader) {
         stopLoader(currentLoader);
       }
+
+      const currentPaneId = currentTab.getAttribute('href')?.substring(1);
+      if (currentPaneId) {
+        const currentPane = document.getElementById(currentPaneId);
+        if (currentPane) {
+          currentPane.classList.remove('w--tab-active');
+        }
+      }
     }
 
     if (nextTab) {
@@ -52,6 +60,14 @@ export function autoTabs(): void {
       const nextLoader = nextTab.querySelector('.lab-scene_loading-tab') as HTMLElement | null;
       if (nextLoader) {
         resetLoader(nextLoader);
+      }
+
+      const nextPaneId = nextTab.getAttribute('href')?.substring(1);
+      if (nextPaneId) {
+        const nextPane = document.getElementById(nextPaneId);
+        if (nextPane) {
+          nextPane.classList.add('w--tab-active');
+        }
       }
     }
   };
