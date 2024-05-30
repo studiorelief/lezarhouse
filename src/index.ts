@@ -29,7 +29,9 @@ window.Webflow.push(() => {
     loopArtists();
   }
 
-  cmsPopup();
+  if (document.querySelector('.a--c--slider-open-modal')) {
+    cmsPopup();
+  }
 
   loopBaseline();
 
