@@ -1,3 +1,6 @@
+/* body {
+  background-color: red;
+} */
 /*
 ! Navbar
 */
@@ -180,7 +183,7 @@
 }
 
 .a--c--slider-hover:hover .c--slider_background-image-wrapper {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .swiper-slide.swiper-slide-prev .is-parallax .c--slider_background-image {
