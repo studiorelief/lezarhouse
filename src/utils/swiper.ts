@@ -43,9 +43,11 @@ export function swiperProject() {
     const paginationContainer = swiperContainer.nextElementSibling;
 
     if (paginationContainer && paginationContainer.classList.contains('swiper-pagination-custom')) {
-      new Swiper(swiperContainer, {
+      const isReverse = swiperContainer.classList.contains('is-reverse');
+
+      const swiperInstance = new Swiper(swiperContainer, {
         direction: 'horizontal',
-        loop: false,
+        loop: true,
         slidesPerView: 'auto',
         spaceBetween: 40,
         centeredSlides: false,
@@ -59,12 +61,31 @@ export function swiperProject() {
           bulletClass: 'swiper-pagination-bullet-custom',
           bulletActiveClass: 'swiper-pagination-bullet-custom-active',
         },
+        autoplay: {
+          delay: 2000,
+          pauseOnMouseEnter: true,
+          disableOnInteraction: false,
+          reverseDirection: isReverse,
+        },
         slideActiveClass: 'is-active',
         speed: 800,
         effect: 'slide',
         slideEffect: {
           easeOut: 'ease-out',
         },
+      });
+
+      swiperInstance.on('slideChange', function () {
+        const container = swiperInstance.el;
+
+        if (container.classList.contains('is-reverse')) {
+          swiperInstance.params.autoplay.reverseDirection = true;
+        } else {
+          swiperInstance.params.autoplay.reverseDirection = false;
+        }
+        // Restart autoplay to apply the change immediately
+        swiperInstance.autoplay.stop();
+        swiperInstance.autoplay.start();
       });
     }
   });
@@ -104,6 +125,7 @@ export function swiperTestimonials() {
         nextEl: '.swiper-right.is-c--artists-testomials',
         prevEl: '.swiper-left.is-c--artists-testomials',
       },
+      effect: 'fade',
     });
   });
 }

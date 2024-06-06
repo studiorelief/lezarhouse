@@ -253,3 +253,14 @@
   background-image: none !important;
   background-color: #f6a468 !important;
 }
+
+#button-green .button-border.is-tertiary {
+  background-image: linear-gradient(-90deg, #9EF66880, #9EF668);
+}
+
+#button-green .button.is-tertiary:hover .button-border.is-tertiary {
+  background-image: none !important;
+  background-color: #9EF668 !important;
+}
+
+
