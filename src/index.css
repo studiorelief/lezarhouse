@@ -241,15 +241,15 @@
 */
 
 #button-blue .button-border.is-tertiary {
-  background-image: linear-gradient(-90deg, #68AAF680, #68AAF6);
+  background-image: linear-gradient(-90deg, #68aaf680, #68aaf6);
 }
 
-#button-blue .button.is-tertiary:hover .button-border.is-tertiary  {
+#button-blue .button.is-tertiary:hover .button-border.is-tertiary {
   background-image: none !important;
-  background-color: #68AAF6 !important;
+  background-color: #68aaf6 !important;
 }
 
-#button-orange .button.is-tertiary:hover .button-border.is-tertiary  {
+#button-orange .button.is-tertiary:hover .button-border.is-tertiary {
   background-image: none !important;
-  background-color: #F6A468 !important;
+  background-color: #f6a468 !important;
 }
