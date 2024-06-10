@@ -1,4 +1,22 @@
 import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+export function studioHeroParallax() {
+  gsap.set('.studio-hero_heading', { y: '-15rem' });
+  gsap.to('.studio-hero_heading', {
+    scrollTrigger: {
+      markers: false,
+      trigger: '.section_studio-hero',
+      start: 'top 50%',
+      end: 'bottom 50%',
+      scrub: true,
+      scroller: '.main-content-wrapper',
+    },
+    y: '25rem',
+  });
+}
 
 export function loopBaseline() {
   gsap.set('.studio-hero_baseline-wrapper', { x: 0 });

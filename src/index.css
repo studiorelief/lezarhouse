@@ -255,12 +255,10 @@
 }
 
 #button-green .button-border.is-tertiary {
-  background-image: linear-gradient(-90deg, #9EF66880, #9EF668);
+  background-image: linear-gradient(-90deg, #9ef66880, #9ef668);
 }
 
 #button-green .button.is-tertiary:hover .button-border.is-tertiary {
   background-image: none !important;
-  background-color: #9EF668 !important;
+  background-color: #9ef668 !important;
 }
-
-

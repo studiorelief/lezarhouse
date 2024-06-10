@@ -2,7 +2,7 @@ import './index.css';
 
 import { autoTabs } from '$utils/autotabs';
 import { darkModeContent } from '$utils/darkmode';
-import { loopArtists, loopBaseline } from '$utils/gsap';
+import { loopArtists, loopBaseline, studioHeroParallax } from '$utils/gsap';
 import { toggleSize } from '$utils/navbar';
 import { loadScript } from '$utils/scripts';
 import { swiperLab, swiperProject, swiperSlide, swiperTestimonials } from '$utils/swiper';
@@ -23,6 +23,10 @@ window.Webflow.push(() => {
   swiperTestimonials();
 
   svgCms();
+
+  if (window.location.href === '/') {
+    studioHeroParallax();
+  }
 
   if (window.location.href.includes('/let-art-be')) {
     cmsPlaylist();
