@@ -24,7 +24,7 @@ window.Webflow.push(() => {
 
   svgCms();
 
-  if (window.location.href === '/') {
+  if (window.location.pathname === '/') {
     studioHeroParallax();
   }
 

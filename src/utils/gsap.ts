@@ -9,8 +9,8 @@ export function studioHeroParallax() {
     scrollTrigger: {
       markers: false,
       trigger: '.section_studio-hero',
-      start: 'top 50%',
-      end: 'bottom 50%',
+      start: '0 50%',
+      end: '120% 50%',
       scrub: true,
       scroller: '.main-content-wrapper',
     },
