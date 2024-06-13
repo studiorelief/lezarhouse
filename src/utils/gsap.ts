@@ -4,17 +4,16 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export function studioHeroParallax() {
-  gsap.set('.studio-hero_heading', { y: '-15rem' });
   gsap.to('.studio-hero_heading', {
     scrollTrigger: {
       markers: false,
       trigger: '.section_studio-hero',
-      start: '0 50%',
+      start: '30% 50%',
       end: '120% 50%',
       scrub: true,
       scroller: '.main-content-wrapper',
     },
-    y: '25rem',
+    y: '30rem',
   });
 }
 
@@ -46,4 +45,31 @@ export function loopArtists() {
       xPercent: gsap.utils.wrap(-100, 0),
     },
   });
+}
+
+export function loopArtStudio() {
+  gsap.to('.studio-services_image-w.is-1', {
+    rotationZ: -360,
+    duration: 10,
+    repeat: -1,
+    ease: 'linear',
+  });
+gsap.to('.studio-services_image-w.is-2', {
+    rotationZ: -360,
+    duration: 5,
+    repeat: -1,
+    ease: 'linear',
+  });
+  gsap.to('.studio-services_image-w.is-4', {
+    rotationZ: 360,
+    duration: 10,
+    repeat: -1,
+    ease: 'linear',
+  });
+  gsap.to('.studio-services_image-w.is-6', {
+    rotationZ: 360,
+    duration: 5,
+    repeat: -1,
+    ease: 'linear',
+  }); 
 }

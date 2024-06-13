@@ -2,14 +2,17 @@ import './index.css';
 
 import { autoTabs } from '$utils/autotabs';
 import { darkModeContent } from '$utils/darkmode';
-import { loopArtists, loopBaseline, studioHeroParallax } from '$utils/gsap';
+import { loopArtists, loopArtStudio, loopBaseline, studioHeroParallax } from '$utils/gsap';
 import { toggleSize } from '$utils/navbar';
 import { loadScript } from '$utils/scripts';
 import { swiperLab, swiperProject, swiperSlide, swiperTestimonials } from '$utils/swiper';
-import { cmsPlaylist, cmsPopup, svgCms } from '$utils/tricks';
+import { /* cmsPlaylist, */ cmsPopup, svgCms } from '$utils/tricks';
+import { cmsPlaylist } from '$utils/autoplaylist';
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
+
+
   Promise.all([
     loadScript('https://cdn.jsdelivr.net/npm/@finsweet/attributes-accordion@1/accordion.js'),
   ]);
@@ -24,13 +27,15 @@ window.Webflow.push(() => {
 
   svgCms();
 
+   loopArtStudio();
+
   if (window.location.pathname === '/') {
     studioHeroParallax();
   }
 
   if (window.location.href.includes('/let-art-be')) {
-    cmsPlaylist();
     loopArtists();
+    cmsPlaylist();
   }
 
   if (document.querySelector('.a--c--slider-open-modal')) {
@@ -40,4 +45,5 @@ window.Webflow.push(() => {
   loopBaseline();
 
   autoTabs();
+
 });
