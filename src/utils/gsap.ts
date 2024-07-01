@@ -50,19 +50,19 @@ export function loopArtists() {
 export function loopArtStudio() {
   gsap.to('.studio-services_image-w.is-1', {
     rotationZ: 360,
-    duration: 10,
+    duration: 20,
     repeat: -1,
     ease: 'linear',
   });
   gsap.to('.studio-services_image-w.is-3', {
     rotationZ: 360,
-    duration: 9,
+    duration: 18,
     repeat: -1,
     ease: 'linear',
   });
   gsap.to('.studio-services_image-w.is-4', {
     rotationZ: 360,
-    duration: 8,
+    duration: 16,
     repeat: -1,
     ease: 'linear',
   });
