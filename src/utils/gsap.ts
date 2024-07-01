@@ -49,27 +49,47 @@ export function loopArtists() {
 
 export function loopArtStudio() {
   gsap.to('.studio-services_image-w.is-1', {
-    rotationZ: -360,
+    rotationZ: 360,
     duration: 10,
     repeat: -1,
     ease: 'linear',
   });
-gsap.to('.studio-services_image-w.is-2', {
-    rotationZ: -360,
-    duration: 5,
+  gsap.to('.studio-services_image-w.is-3', {
+    rotationZ: 360,
+    duration: 9,
     repeat: -1,
     ease: 'linear',
   });
   gsap.to('.studio-services_image-w.is-4', {
     rotationZ: 360,
-    duration: 10,
+    duration: 8,
     repeat: -1,
     ease: 'linear',
   });
-  gsap.to('.studio-services_image-w.is-6', {
+  /* gsap.to('.studio-services_image-w.is-5', {
     rotationZ: 360,
-    duration: 5,
+    duration: 10,
     repeat: -1,
     ease: 'linear',
-  }); 
+  }); */
+}
+
+export function pulseAnimation() {
+  gsap.to('#pulse-dot', {
+    scale: 1.5,
+    duration: 1.5,
+    transformOrigin: 'center',
+    yoyo: true,
+    repeat: -1,
+    ease: 'power1.inOut',
+  });
+}
+
+export function ecosystemRotate() {
+  gsap.to('.ecosystem-hero_stamp', {
+    rotation: 360,
+    repeat: -1,
+    duration: 30,
+    ease: 'linear',
+  });
 }

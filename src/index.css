@@ -262,3 +262,19 @@
   background-image: none !important;
   background-color: #9ef668 !important;
 }
+
+/* Logo Ecosystem - Dark mode */
+
+.w-mod-js.dark-mode .ecosystem-grid_cards {
+  filter: invert(100%);
+}
+
+/* News filter - Dark mode ADJ  */
+.fs_checkbox_field.is-news.is-active-inputactive .fs_checkbox_background-dm {
+  opacity: 0;
+}
+
+/* News filter - Dark mode active */
+.w-mod-js.dark-mode .fs_checkbox_field.is-news.is-active-inputactive {
+  background-color: rgba(255, 255, 255, 0.2);
+}
