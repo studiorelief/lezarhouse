@@ -265,7 +265,7 @@
 
 /* Logo Ecosystem - Dark mode */
 
-.w-mod-js.dark-mode .ecosystem-grid_cards {
+.w-mod-js.dark-mode .ecosystem-grid_cards-logo {
   filter: invert(100%);
 }
 

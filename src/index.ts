@@ -8,9 +8,13 @@ import {
   loopArtists,
   loopArtStudio,
   loopBaseline,
+  loopHomeNav,
   pulseAnimation,
+  sponsorParallax,
+  sponsorshipCardsParallax,
   studioHeroParallax,
 } from '$utils/gsap';
+import { homeTextAnimation } from '$utils/homeText';
 import { toggleSize } from '$utils/navbar';
 import { loadScript } from '$utils/scripts';
 import { swiperLab, swiperProject, swiperSlide, swiperTestimonials } from '$utils/swiper';
@@ -21,40 +25,54 @@ window.Webflow.push(() => {
   Promise.all([
     loadScript('https://cdn.jsdelivr.net/npm/@finsweet/attributes-accordion@1/accordion.js'),
     loadScript('https://cdn.jsdelivr.net/npm/@finsweet/attributes-inputactive@1/inputactive.js'),
-    loadScript('https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmsfilter@1/cmsfilter.js'),
+    setTimeout(() => {
+      loadScript('https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmsfilter@1/cmsfilter.js');
+    }, 1000),
   ]);
 
+  /*
+  ! Navbar
+  */
   darkModeContent();
   toggleSize();
 
+  /*
+  ! Swiper
+  */
   swiperSlide();
   swiperLab();
   swiperProject();
   swiperTestimonials();
-
   svgCms();
 
-  loopArtStudio();
-
   if (window.location.pathname === '/') {
+    homeTextAnimation();
+    loopHomeNav();
+  }
+
+  if (window.location.href.includes('/studio')) {
     studioHeroParallax();
+    loopArtStudio();
+    loopBaseline();
   }
 
   if (window.location.href.includes('/let-art-be')) {
     loopArtists();
     cmsPlaylist();
     pulseAnimation();
+    autoTabs();
   }
 
   if (window.location.href.includes('/ecosystem')) {
     ecosystemRotate();
   }
 
+  if (window.location.href.includes('/sponsorship')) {
+    sponsorParallax();
+    sponsorshipCardsParallax();
+  }
+
   if (document.querySelector('.a--c--slider-open-modal')) {
     cmsPopup();
   }
-
-  loopBaseline();
-
-  autoTabs();
 });
