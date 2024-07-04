@@ -108,7 +108,7 @@ export function sponsorParallax() {
       end: '120% 50%',
       scrub: true,
     },
-    y: '10rem',
+    y: '7rem',
   });
 
   const SponsorSections = document.querySelectorAll('.section_sponsorship-layout');

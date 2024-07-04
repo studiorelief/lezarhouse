@@ -278,3 +278,12 @@
 .w-mod-js.dark-mode .fs_checkbox_field.is-news.is-active-inputactive {
   background-color: rgba(255, 255, 255, 0.2);
 }
+
+.ecosystem-grid_cards .ecosystem-grid_cards-logo {
+  scale:1;
+  transition: transform ease-out 0.2s;
+}
+
+.ecosystem-grid_cards:hover .ecosystem-grid_cards-logo {
+  transform: scale(1.2);
+}
