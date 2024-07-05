@@ -225,28 +225,28 @@ export function createAngelsCardsParallax() {
     if (cardsWrapper && cardsTop) {
       gsap.to(cardsTop, {
         scrollTrigger: {
-          markers: true,
+          markers: false,
           trigger: cardsWrapper,
           scroller: '.main-content-wrapper',
           start: '0% 95%',
           end: '95% 0%',
           scrub: true,
         },
-        y: cardsWrapper.offsetHeight - cardsTop.offsetHeight,
+        y: (cardsWrapper.offsetHeight - cardsTop.offsetHeight) / 2,
       });
     }
 
     if (cardsWrapper && cardsBottom) {
       gsap.to(cardsBottom, {
         scrollTrigger: {
-          markers: true,
+          markers: false,
           trigger: cardsWrapper,
           scroller: '.main-content-wrapper',
           start: '0% 95%',
           end: '95% 0%',
           scrub: true,
         },
-        y: -(cardsWrapper.offsetHeight - cardsBottom.offsetHeight),
+        y: -(cardsWrapper.offsetHeight - cardsBottom.offsetHeight) / 2,
       });
     }
   });
