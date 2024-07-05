@@ -4,6 +4,8 @@ import { cmsPlaylist } from '$utils/autoplaylist';
 import { autoTabs } from '$utils/autotabs';
 import { darkModeContent } from '$utils/darkmode';
 import {
+  angelsAnimationScroll,
+  createAngelsCardsParallax,
   ecosystemRotate,
   loopArtists,
   loopArtStudio,
@@ -15,6 +17,7 @@ import {
   studioHeroParallax,
 } from '$utils/gsap';
 import { homeTextAnimation } from '$utils/homeText';
+import { loadModelViewerScript } from '$utils/loadModalViewer';
 import { toggleSize } from '$utils/navbar';
 import { loadScript } from '$utils/scripts';
 import { swiperLab, swiperProject, swiperSlide, swiperTestimonials } from '$utils/swiper';
@@ -70,6 +73,12 @@ window.Webflow.push(() => {
   if (window.location.href.includes('/sponsorship')) {
     sponsorParallax();
     sponsorshipCardsParallax();
+  }
+
+  if (window.location.href.includes('/creative-angels')) {
+    angelsAnimationScroll();
+    loadModelViewerScript();
+    createAngelsCardsParallax();
   }
 
   if (document.querySelector('.a--c--slider-open-modal')) {

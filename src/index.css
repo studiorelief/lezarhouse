@@ -280,10 +280,44 @@
 }
 
 .ecosystem-grid_cards .ecosystem-grid_cards-logo {
-  scale:1;
+  scale: 1;
   transition: transform ease-out 0.2s;
 }
 
 .ecosystem-grid_cards:hover .ecosystem-grid_cards-logo {
   transform: scale(1.2);
+}
+
+/* 
+! Custom Button in Section CTA - Component 
+*/
+
+#golden-border .button-border {
+  background: conic-gradient(
+      from 200deg,
+      #7d5d36,
+      #e9e9c9,
+      #866945,
+      #ad8655,
+      #b09257,
+      #7f5f39,
+      #6e4116,
+      #683a10,
+      #7d5d36
+    )
+    border-box; /*3*/
+}
+
+/* 
+! Custom Color for Cards Background in Sponsorship & Creative Angels
+*/
+
+.w-mod-js.dark-mode .c-angels-layout_background-color {
+  background-color: black;
+  opacity: 0.5;
+}
+
+.w-mod-js.dark-mode .sponsorship-layout_background-color {
+  background-color: black;
+  opacity: 0.5;
 }

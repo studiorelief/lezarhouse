@@ -125,7 +125,7 @@ export function sponsorParallax() {
           end: '100% 0%',
           scrub: true,
         },
-        y: '5rem',
+        y: '7rem',
       });
     }
   });
@@ -154,6 +154,10 @@ export function sponsorshipCardsParallax() {
   });
 }
 
+/* 
+! Page Home
+*/
+
 export function loopHomeNav() {
   gsap.set('.home-hero_page-loop-wrapper', { x: 0 });
 
@@ -166,5 +170,84 @@ export function loopHomeNav() {
     modifiers: {
       xPercent: gsap.utils.wrap(-100, 0),
     },
+  });
+}
+
+/* 
+! Page Creative Angels
+*/
+
+export function angelsAnimationScroll() {
+  gsap.to('.c-angels-hero_heading', {
+    scrollTrigger: {
+      markers: false,
+      trigger: '.section_c-angels-hero',
+      scroller: '.main-content-wrapper',
+      start: '425 50%',
+      end: '1040 50%',
+      scrub: true,
+    },
+    y: '15rem',
+  });
+  gsap.to('.c-angels-hero_asset-angel.is-main', {
+    scrollTrigger: {
+      markers: false,
+      trigger: '.section_c-angels-hero',
+      scroller: '.main-content-wrapper',
+      start: '425 50%',
+      end: '1040 50%',
+      scrub: true,
+    },
+    y: '20rem',
+  });
+  gsap.set('.c-angels-hero_asset-angel.is-second', { y: '-35rem' });
+  gsap.to('.c-angels-hero_asset-angel.is-second', {
+    scrollTrigger: {
+      markers: false,
+      trigger: '.section_c-angels-hero',
+      scroller: '.main-content-wrapper',
+      start: '840 50%',
+      end: '1555 65%',
+      scrub: true,
+    },
+    y: '0rem',
+  });
+}
+
+export function createAngelsCardsParallax() {
+  const sections = document.querySelectorAll('.section_c-angels-layout');
+
+  sections.forEach((section) => {
+    const cardsWrapper = section.querySelector<HTMLElement>('.c-angels-layout_cards-wrapper');
+    const cardsTop = section.querySelector<HTMLElement>('.c-angels-layout_cards.is-top');
+    const cardsBottom = section.querySelector<HTMLElement>('.c-angels-layout_cards.is-bottom');
+
+    if (cardsWrapper && cardsTop) {
+      gsap.to(cardsTop, {
+        scrollTrigger: {
+          markers: true,
+          trigger: cardsWrapper,
+          scroller: '.main-content-wrapper',
+          start: '0% 95%',
+          end: '95% 0%',
+          scrub: true,
+        },
+        y: cardsWrapper.offsetHeight - cardsTop.offsetHeight,
+      });
+    }
+
+    if (cardsWrapper && cardsBottom) {
+      gsap.to(cardsBottom, {
+        scrollTrigger: {
+          markers: true,
+          trigger: cardsWrapper,
+          scroller: '.main-content-wrapper',
+          start: '0% 95%',
+          end: '95% 0%',
+          scrub: true,
+        },
+        y: -(cardsWrapper.offsetHeight - cardsBottom.offsetHeight),
+      });
+    }
   });
 }
