@@ -308,6 +308,10 @@
     border-box; /*3*/
 }
 
+#sponsor-border .button-border {
+  background: conic-gradient(from 200deg, #eb6873, #0fa3c4, #f2bc17, #eb6873) border-box; /*3*/
+}
+
 /* 
 ! Custom Color for Cards Background in Sponsorship & Creative Angels
 */

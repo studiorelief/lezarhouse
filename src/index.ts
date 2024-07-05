@@ -20,7 +20,13 @@ import { homeTextAnimation } from '$utils/homeText';
 import { loadModelViewerScript } from '$utils/loadModalViewer';
 import { toggleSize } from '$utils/navbar';
 import { loadScript } from '$utils/scripts';
-import { swiperLab, swiperProject, swiperSlide, swiperTestimonials } from '$utils/swiper';
+import {
+  swiperLab,
+  swiperProject,
+  swiperSlide,
+  swiperSponsorGallery,
+  swiperTestimonials,
+} from '$utils/swiper';
 import { /* cmsPlaylist, */ cmsPopup, svgCms } from '$utils/tricks';
 
 window.Webflow ||= [];
@@ -72,13 +78,18 @@ window.Webflow.push(() => {
 
   if (window.location.href.includes('/sponsorship')) {
     sponsorParallax();
-    sponsorshipCardsParallax();
+    swiperSponsorGallery();
+    if (window.innerWidth >= 1024) {
+      sponsorshipCardsParallax();
+    }
   }
 
   if (window.location.href.includes('/creative-angels')) {
     angelsAnimationScroll();
     loadModelViewerScript();
-    createAngelsCardsParallax();
+    if (window.innerWidth >= 1024) {
+      createAngelsCardsParallax();
+    }
   }
 
   if (document.querySelector('.a--c--slider-open-modal')) {

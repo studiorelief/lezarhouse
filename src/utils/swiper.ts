@@ -129,3 +129,25 @@ export function swiperTestimonials() {
     });
   });
 }
+
+export function swiperSponsorGallery() {
+  const swiperContainers = document.querySelectorAll('.swiper.is-sponsorship-gallery');
+
+  swiperContainers.forEach((container) => {
+    new Swiper(container, {
+      loop: true,
+      slidesPerView: '4',
+      spaceBetween: 40,
+      speed: 800,
+      centeredSlides: false,
+      mousewheel: {
+        forceToAxis: true,
+      },
+      autoplay: {
+        delay: 2000,
+        pauseOnMouseEnter: true,
+        disableOnInteraction: false,
+      },
+    });
+  });
+}

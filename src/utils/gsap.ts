@@ -99,6 +99,17 @@ export function ecosystemRotate() {
 */
 
 export function sponsorParallax() {
+  gsap.to('.sponsorship-hero_heading', {
+    scrollTrigger: {
+      markers: false,
+      trigger: '.section_sponsorship-hero',
+      scroller: '.main-content-wrapper',
+      start: '425 425',
+      end: '1040 50%',
+      scrub: true,
+    },
+    y: '15rem',
+  });
   gsap.to(['.sponsorship-hero_background-image', '#is-sponsor-parallax-main'], {
     scrollTrigger: {
       markers: false,
@@ -144,7 +155,7 @@ export function sponsorshipCardsParallax() {
           markers: false,
           trigger: cardsWrapper,
           scroller: '.main-content-wrapper',
-          start: '0% 95%',
+          start: '55% 95%',
           end: '95% 0%',
           scrub: true,
         },
@@ -183,7 +194,7 @@ export function angelsAnimationScroll() {
       markers: false,
       trigger: '.section_c-angels-hero',
       scroller: '.main-content-wrapper',
-      start: '425 50%',
+      start: '425 425',
       end: '1040 50%',
       scrub: true,
     },
@@ -194,7 +205,7 @@ export function angelsAnimationScroll() {
       markers: false,
       trigger: '.section_c-angels-hero',
       scroller: '.main-content-wrapper',
-      start: '425 50%',
+      start: '425 425',
       end: '1040 50%',
       scrub: true,
     },
