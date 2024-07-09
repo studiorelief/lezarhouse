@@ -219,6 +219,14 @@
   transform: translateX(-6rem);
 }
 
+.swiper-slide.swiper-slide-next
+  + .swiper-slide
+  + .swiper-slide
+  .is-parallax
+  .c--slider_background-image {
+  transform: translateX(-4rem);
+}
+
 /*
 ! Slider / Cross-fade test
 */

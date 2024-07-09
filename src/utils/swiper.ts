@@ -4,13 +4,12 @@ import 'swiper/css/bundle';
 import Swiper from 'swiper/bundle';
 
 export function swiperSlide() {
-  const allSwipers = document.querySelectorAll('.swiper.is-c--slider ');
+  const allSwipers = document.querySelectorAll('.swiper.is-c--slider');
   allSwipers.forEach((swiperContainer) => {
     const navigationContainer = swiperContainer.nextElementSibling;
 
     if (navigationContainer) {
-      // Vérifie que navigationContainer n'est pas null
-      new Swiper(swiperContainer, {
+      new Swiper(swiperContainer as HTMLElement, {
         direction: 'horizontal',
         loop: false,
         slidesPerView: 'auto',
@@ -21,8 +20,8 @@ export function swiperSlide() {
           forceToAxis: true,
         },
         navigation: {
-          nextEl: navigationContainer.querySelector('.swiper-right'),
-          prevEl: navigationContainer.querySelector('.swiper-left'),
+          nextEl: navigationContainer.querySelector('.swiper-right') as HTMLElement,
+          prevEl: navigationContainer.querySelector('.swiper-left') as HTMLElement,
         },
         slideActiveClass: 'is-active',
         speed: 800,
@@ -30,8 +29,31 @@ export function swiperSlide() {
         slideEffect: {
           easeOut: 'ease-out',
         },
+        on: {
+          reachEnd: function () {
+            const lastSlide = swiperContainer.querySelector(
+              '.swiper-slide:nth-last-child(2) .is-parallax .c--slider_background-image'
+            ) as HTMLElement;
+            const lastSlideParallax = swiperContainer.querySelector(
+              '.swiper-slide:last-child .is-parallax .c--slider_background-image'
+            ) as HTMLElement;
+            if (lastSlide) {
+              lastSlide.style.transform = 'translateX(0rem)';
+            }
+            if (lastSlideParallax) {
+              lastSlideParallax.style.transform = 'translateX(0rem)';
+            }
+          },
+          fromEdge: function () {
+            const resetSlides = swiperContainer.querySelectorAll(
+              '.swiper-slide .is-parallax .c--slider_background-image'
+            ) as NodeListOf<HTMLElement>;
+            resetSlides.forEach((slide) => {
+              slide.style.transform = '';
+            });
+          },
+        },
       });
-    } else {
     }
   });
 }
@@ -84,6 +106,12 @@ export function swiperProject() {
           swiperInstance.params.autoplay.reverseDirection = false;
         }
         // Restart autoplay to apply the change immediately
+        swiperInstance.autoplay.stop();
+        swiperInstance.autoplay.start();
+      });
+
+      // Ensure autoplay restarts correctly after pagination click
+      swiperInstance.on('paginationUpdate', function () {
         swiperInstance.autoplay.stop();
         swiperInstance.autoplay.start();
       });

@@ -108,7 +108,7 @@ export function sponsorParallax() {
       end: '1040 50%',
       scrub: true,
     },
-    y: '15rem',
+    y: '7.5rem',
   });
   gsap.to(['.sponsorship-hero_background-image', '#is-sponsor-parallax-main'], {
     scrollTrigger: {
@@ -260,5 +260,29 @@ export function createAngelsCardsParallax() {
         y: -(cardsWrapper.offsetHeight - cardsBottom.offsetHeight) / 2,
       });
     }
+  });
+}
+
+/* 
+! House - Countup
+*/
+
+export function countHeadingKpi() {
+  const elements = document.querySelectorAll('.house-hero_kpi-heading');
+  elements.forEach((element) => {
+    const endValue = parseInt(element.innerHTML, 10);
+    gsap.fromTo(
+      element,
+      { innerText: 0 },
+      {
+        innerText: endValue,
+        duration: 2,
+        ease: 'power1.inOut',
+        snap: { innerText: 1 },
+        onUpdate: function () {
+          element.innerHTML = Math.ceil(this.targets()[0].innerText).toString();
+        },
+      }
+    );
   });
 }

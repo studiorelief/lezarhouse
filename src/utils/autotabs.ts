@@ -24,7 +24,7 @@ export function autoTabs(): void {
     loader.style.transition = 'none';
     loader.style.width = '0%';
     setTimeout(() => {
-      loader.style.transition = 'width 3s linear';
+      loader.style.transition = 'width 6s linear';
       loader.style.width = '100%';
       loader.style.opacity = '1';
     }, 10); // Small delay to reset the transition
@@ -90,7 +90,7 @@ export function autoTabs(): void {
       changeTab(currentTab, nextTab);
 
       tabLoop();
-    }, 3000);
+    }, 6000);
   };
 
   tabLoop();
@@ -120,7 +120,7 @@ export function autoTabs(): void {
       loader.style.width = '0%';
       loader.style.opacity = '0';
       setTimeout(() => {
-        loader.style.transition = 'width 3s linear, opacity 0.3s linear';
+        loader.style.transition = 'width 6s linear, opacity 0.3s linear';
         if (tabElement.classList.contains('w--current')) {
           loader.style.width = '100%';
           loader.style.opacity = '1';

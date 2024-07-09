@@ -1,10 +1,12 @@
 import './index.css';
 
+import { applyHoverEffect } from '$utils/3Dcards';
 import { cmsPlaylist } from '$utils/autoplaylist';
 import { autoTabs } from '$utils/autotabs';
 import { darkModeContent } from '$utils/darkmode';
 import {
   angelsAnimationScroll,
+  countHeadingKpi,
   createAngelsCardsParallax,
   ecosystemRotate,
   loopArtists,
@@ -70,6 +72,11 @@ window.Webflow.push(() => {
     cmsPlaylist();
     pulseAnimation();
     autoTabs();
+  }
+
+  if (window.location.href.includes('/house')) {
+    countHeadingKpi();
+    applyHoverEffect();
   }
 
   if (window.location.href.includes('/ecosystem')) {
