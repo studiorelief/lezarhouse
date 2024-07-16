@@ -287,15 +287,6 @@
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.ecosystem-grid_cards .ecosystem-grid_cards-logo {
-  scale: 1;
-  transition: transform ease-out 0.2s;
-}
-
-.ecosystem-grid_cards:hover .ecosystem-grid_cards-logo {
-  transform: scale(1.2);
-}
-
 /* 
 ! Custom Button in Section CTA - Component 
 */
@@ -332,4 +323,16 @@
 .w-mod-js.dark-mode .sponsorship-layout_background-color {
   background-color: black;
   opacity: 0.5;
+}
+
+/* 
+! GLB Setup
+*/
+
+model-viewer#reveal {
+  --poster-color: transparent;
+}
+
+model-viewer {
+  --progress-bar-color: transparent;
 }

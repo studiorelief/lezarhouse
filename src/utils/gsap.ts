@@ -86,8 +86,14 @@ export function pulseAnimation() {
 }
 
 export function ecosystemRotate() {
-  gsap.to('.ecosystem-hero_stamp', {
+  gsap.to('.ecosystem-hero_stamp-asset-1', {
     rotation: 360,
+    repeat: -1,
+    duration: 30,
+    ease: 'linear',
+  });
+  gsap.to('.ecosystem-hero_stamp-asset-2', {
+    rotation: -360,
     repeat: -1,
     duration: 30,
     ease: 'linear',
@@ -198,7 +204,7 @@ export function angelsAnimationScroll() {
       end: '1040 50%',
       scrub: true,
     },
-    y: '15rem',
+    y: '7.5rem',
   });
   gsap.to('.c-angels-hero_asset-angel.is-main', {
     scrollTrigger: {
@@ -286,3 +292,38 @@ export function countHeadingKpi() {
     );
   });
 }
+
+/* 
+! Page House
+*/
+
+export function houseParallax() {
+  gsap.to('.house-hero_content', {
+    scrollTrigger: {
+      markers: false,
+      trigger: '.section_sponsorship-hero',
+      scroller: '.main-content-wrapper',
+      start: '425 425',
+      end: '1040 50%',
+      scrub: true,
+    },
+    y: '7.5rem',
+  });
+}
+
+/* 
+! Page LAB
+*/
+
+export function tabsParallax() {}
+gsap.to('.lab-scene_image', {
+  scrollTrigger: {
+    markers: false,
+    trigger: '.section_lab-scene',
+    scroller: '.main-content-wrapper',
+    start: '0% 50%',
+    end: '100% 0%',
+    scrub: true,
+  },
+  y: '-15rem',
+});

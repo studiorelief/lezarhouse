@@ -9,6 +9,7 @@ import {
   countHeadingKpi,
   createAngelsCardsParallax,
   ecosystemRotate,
+  houseParallax,
   loopArtists,
   loopArtStudio,
   loopBaseline,
@@ -17,6 +18,7 @@ import {
   sponsorParallax,
   sponsorshipCardsParallax,
   studioHeroParallax,
+  tabsParallax,
 } from '$utils/gsap';
 import { homeTextAnimation } from '$utils/homeText';
 import { loadModelViewerScript } from '$utils/loadModalViewer';
@@ -62,6 +64,7 @@ window.Webflow.push(() => {
   }
 
   if (window.location.href.includes('/studio')) {
+    loadModelViewerScript();
     studioHeroParallax();
     loopArtStudio();
     loopBaseline();
@@ -72,11 +75,15 @@ window.Webflow.push(() => {
     cmsPlaylist();
     pulseAnimation();
     autoTabs();
+    tabsParallax();
   }
 
   if (window.location.href.includes('/house')) {
     countHeadingKpi();
-    applyHoverEffect();
+    houseParallax();
+    setTimeout(() => {
+      applyHoverEffect();
+    }, 500);
   }
 
   if (window.location.href.includes('/ecosystem')) {
@@ -97,6 +104,9 @@ window.Webflow.push(() => {
     if (window.innerWidth >= 1024) {
       createAngelsCardsParallax();
     }
+    setTimeout(() => {
+      applyHoverEffect();
+    }, 500);
   }
 
   if (document.querySelector('.a--c--slider-open-modal')) {
