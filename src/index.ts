@@ -90,14 +90,6 @@ window.Webflow.push(() => {
     ecosystemRotate();
   }
 
-  if (window.location.href.includes('/sponsorship')) {
-    sponsorParallax();
-    swiperSponsorGallery();
-    if (window.innerWidth >= 1024) {
-      sponsorshipCardsParallax();
-    }
-  }
-
   if (window.location.href.includes('/creative-angels')) {
     angelsAnimationScroll();
     loadModelViewerScript();
@@ -107,6 +99,14 @@ window.Webflow.push(() => {
     setTimeout(() => {
       applyHoverEffect();
     }, 500);
+  }
+
+  if (window.location.href.includes('/sponsorship')) {
+    sponsorParallax();
+    swiperSponsorGallery();
+    if (window.innerWidth >= 1024) {
+      sponsorshipCardsParallax();
+    }
   }
 
   if (document.querySelector('.a--c--slider-open-modal')) {

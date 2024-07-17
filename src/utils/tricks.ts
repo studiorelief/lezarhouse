@@ -10,7 +10,9 @@ export function svgCms() {
 
 export function cmsPopup() {
   const openModalButtons = document.querySelectorAll<HTMLElement>('.a--c--slider-open-modal');
-  const modalBackgrounds = document.querySelectorAll<HTMLElement>('.c--slider_modal-background');
+  const modalBackgrounds = document.querySelectorAll<HTMLElement>(
+    '.c--slider_modal-background, .popup-form_close-wrapper.is-stories'
+  );
 
   openModalButtons.forEach((button) => {
     button.addEventListener('click', () => {
