@@ -75,11 +75,24 @@ export function loopArtStudio() {
 }
 
 export function pulseAnimation() {
-  gsap.to('#pulse-dot', {
-    scale: 1.5,
-    duration: 1.5,
+  gsap.set('.lab-platform_circle-shadow-1', { scale: 0, opacity: 0.25 });
+  gsap.to('.lab-platform_circle-shadow-1', {
+    scale: 2.5,
+    duration: 3.5,
+    opacity: 0,
     transformOrigin: 'center',
-    yoyo: true,
+    yoyo: false,
+    repeat: -1,
+    ease: 'power1.inOut',
+  });
+  gsap.set('.lab-platform_circle-shadow-2', { scale: 0, opacity: 0.5 });
+  gsap.to('.lab-platform_circle-shadow-2', {
+    scale: 2.4,
+    duration: 3.5,
+    opacity: 0,
+    delay: 0.15,
+    transformOrigin: 'center',
+    yoyo: false,
     repeat: -1,
     ease: 'power1.inOut',
   });

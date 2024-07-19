@@ -336,3 +336,13 @@ model-viewer#reveal {
 model-viewer {
   --progress-bar-color: transparent;
 }
+
+/* 
+! cms stories Adj
+*/
+
+figcaption {
+  text-align: left;
+  opacity: 0.5;
+  font-style: italic;
+}
