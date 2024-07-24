@@ -353,7 +353,8 @@ figcaption {
 ! Setup Lenis Scroll 
 */
 
-html.lenis, html.lenis body {
+html.lenis,
+html.lenis body {
   height: auto;
 }
 

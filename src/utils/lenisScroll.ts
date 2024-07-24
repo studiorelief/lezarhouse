@@ -4,7 +4,11 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const preventScrollClasses = ['c--slider_modal', 'form_component'];
+const preventScrollClasses = [
+  'c--slider_modal',
+  'form_component',
+  'fs_accordion-legals_item is-active-accordion',
+];
 
 function addLenisPrevent() {
   preventScrollClasses.forEach((className) => {
