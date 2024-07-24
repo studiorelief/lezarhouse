@@ -21,6 +21,7 @@ import {
   tabsParallax,
 } from '$utils/gsap';
 import { homeTextAnimation } from '$utils/homeText';
+import { lenisScroll } from '$utils/lenisScroll';
 import { loadModelViewerScript } from '$utils/loadModalViewer';
 import { toggleSize } from '$utils/navbar';
 import { loadScript } from '$utils/scripts';
@@ -42,6 +43,11 @@ window.Webflow.push(() => {
       loadScript('https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmsfilter@1/cmsfilter.js');
     }, 1000),
   ]);
+
+  /* 
+  ! Global
+  */
+  lenisScroll();
 
   /*
   ! Navbar

@@ -344,5 +344,31 @@ model-viewer {
 figcaption {
   text-align: left;
   opacity: 0.5;
+  font-size: 1.25rem;
   font-style: italic;
+  padding-top: 0.5rem;
+}
+
+/* 
+! Setup Lenis Scroll 
+*/
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
 }

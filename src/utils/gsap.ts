@@ -328,15 +328,16 @@ export function houseParallax() {
 ! Page LAB
 */
 
-export function tabsParallax() {}
-gsap.to('.lab-scene_image', {
-  scrollTrigger: {
-    markers: false,
-    trigger: '.section_lab-scene',
-    scroller: '.main-content-wrapper',
-    start: '0% 50%',
-    end: '100% 0%',
-    scrub: true,
-  },
-  y: '-15rem',
-});
+export function tabsParallax() {
+  gsap.to('.lab-scene_image', {
+    scrollTrigger: {
+      markers: false,
+      trigger: '.section_lab-scene',
+      scroller: '.main-content-wrapper',
+      start: '50% 50%',
+      end: '120% 0%',
+      scrub: true,
+    },
+    y: '-15rem',
+  });
+}
