@@ -341,3 +341,77 @@ export function tabsParallax() {
     y: '-15rem',
   });
 }
+
+/* 
+! Modal - Residency
+*/
+function setupTimelineModal(
+  modalWrapperSelector: string,
+  timelineLineSelector: string,
+  timelineWrapperSelector: string,
+  modalSelector: string
+) {
+  const modalWrapper = document.querySelector(modalWrapperSelector);
+
+  if (modalWrapper) {
+    const observer = new MutationObserver((mutationsList) => {
+      mutationsList.forEach((mutation) => {
+        if (mutation.attributeName === 'style') {
+          if (getComputedStyle(modalWrapper).display !== 'none') {
+            const images = modalWrapper.querySelectorAll('img');
+            const imageLoadPromises = Array.from(images).map((img) => {
+              if (img.complete) {
+                return Promise.resolve();
+              }
+              return new Promise((resolve) => {
+                img.addEventListener('load', resolve);
+                img.addEventListener('error', resolve);
+              });
+            });
+
+            Promise.all(imageLoadPromises).then(() => {
+              gsap.set(timelineLineSelector, { height: '0%' });
+              gsap.to(timelineLineSelector, {
+                scrollTrigger: {
+                  markers: false,
+                  trigger: timelineWrapperSelector,
+                  scroller: modalSelector,
+                  start: 'top 50%',
+                  end: 'bottom 25%',
+                  scrub: true,
+                },
+                height: '100%',
+              });
+            });
+          } else {
+            ScrollTrigger.getAll().forEach((trigger) => {
+              if (trigger.trigger && trigger.trigger.matches(timelineWrapperSelector)) {
+                trigger.kill();
+              }
+            });
+          }
+        }
+      });
+    });
+
+    observer.observe(modalWrapper, { attributes: true });
+  }
+}
+
+export function timelineModalResidencyCollab() {
+  setupTimelineModal(
+    '.c--slider_modal-wrapper.is-collab',
+    '.residency-modal_timeline-line.is-collab',
+    '.residency-modal_timeline-wrapper.is-collab',
+    '.c--slider_modal.is-collab'
+  );
+}
+
+export function timelineModalResidencyExhib() {
+  setupTimelineModal(
+    '.c--slider_modal-wrapper.is-exhib',
+    '.residency-modal_timeline-line.is-exhib',
+    '.residency-modal_timeline-wrapper.is-exhib',
+    '.c--slider_modal.is-exhib'
+  );
+}

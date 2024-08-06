@@ -19,6 +19,8 @@ import {
   sponsorshipCardsParallax,
   studioHeroParallax,
   tabsParallax,
+  timelineModalResidencyCollab,
+  timelineModalResidencyExhib,
 } from '$utils/gsap';
 import { homeTextAnimation } from '$utils/homeText';
 import { lenisScroll } from '$utils/lenisScroll';
@@ -76,12 +78,19 @@ window.Webflow.push(() => {
     loopBaseline();
   }
 
+  if (window.location.href.includes('/residency')) {
+    timelineModalResidencyCollab();
+    timelineModalResidencyExhib();
+  }
+
   if (window.location.href.includes('/let-art-be')) {
     loopArtists();
     cmsPlaylist();
     pulseAnimation();
     autoTabs();
-    tabsParallax();
+    if (window.innerWidth >= 1024) {
+      tabsParallax();
+    }
   }
 
   if (window.location.href.includes('/house')) {

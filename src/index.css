@@ -278,12 +278,12 @@
 }
 
 /* News filter - Dark mode ADJ  */
-.fs_checkbox_field.is-news.is-active-inputactive .fs_checkbox_background-dm {
+.fs_s-radio_field.is-news.is-active-inputactive .fs_s-radio_background-dm {
   opacity: 0;
 }
 
 /* News filter - Dark mode active */
-.w-mod-js.dark-mode .fs_checkbox_field.is-news.is-active-inputactive {
+.w-mod-js.dark-mode .fs_s-radio_field.is-news.is-active-inputactive {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -372,4 +372,18 @@ html.lenis body {
 
 .lenis.lenis-smooth iframe {
   pointer-events: none;
+}
+
+/* 
+! Rich Text legals adj
+*/
+
+.text-rich-text.is-legals.w-richtext p {
+  background-color: var(--color--background-primary);
+}
+
+::marker {
+  font-size: 0.75rem;
+  vertical-align: middle;
+  margin-bottom: 0.5rem;
 }

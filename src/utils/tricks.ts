@@ -1,4 +1,7 @@
-// transform p svg code to svg (slider)
+/*
+! Tansform p svg code to svg (slider)
+*/
+
 export function svgCms() {
   document.querySelectorAll('[p-cms="svg-code"]').forEach((element) => {
     const svgCode = element.textContent;
@@ -7,6 +10,10 @@ export function svgCms() {
     }
   });
 }
+
+/*
+! Display popup from CMS
+*/
 
 export function cmsPopup() {
   const openModalButtons = document.querySelectorAll<HTMLElement>('.a--c--slider-open-modal');

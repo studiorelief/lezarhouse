@@ -25,7 +25,7 @@ export function lenisScroll() {
   const lenis = new Lenis({
     wrapper: wrapperElement as HTMLElement,
     content: wrapperElement as HTMLElement,
-    lerp: 0.2,
+    lerp: 0.4,
     wheelMultiplier: 0.7,
     gestureOrientation: 'vertical',
   });
