@@ -127,4 +127,8 @@ window.Webflow.push(() => {
   if (document.querySelector('.a--c--slider-open-modal')) {
     cmsPopup();
   }
+
+  if (window.location.href.includes('/jockiz')) {
+    loadModelViewerScript();
+  }
 });
