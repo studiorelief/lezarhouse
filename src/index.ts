@@ -28,10 +28,13 @@ import { loadModelViewerScript } from '$utils/loadModalViewer';
 import { toggleSize } from '$utils/navbar';
 import { loadScript } from '$utils/scripts';
 import {
+  swiperBaseline,
   swiperLab,
   swiperProject,
   swiperSlide,
   swiperSponsorGallery,
+  swiperStudioArtists,
+  swiperStudioServices,
   swiperTestimonials,
 } from '$utils/swiper';
 import { /* cmsPlaylist, */ cmsPopup, svgCms } from '$utils/tricks';
@@ -41,6 +44,7 @@ window.Webflow.push(() => {
   Promise.all([
     loadScript('https://cdn.jsdelivr.net/npm/@finsweet/attributes-accordion@1/accordion.js'),
     loadScript('https://cdn.jsdelivr.net/npm/@finsweet/attributes-inputactive@1/inputactive.js'),
+    loadScript('https://cdn.jsdelivr.net/npm/@finsweet/attributes-richtext@1/richtext.js'),
     setTimeout(() => {
       loadScript('https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmsfilter@1/cmsfilter.js');
     }, 1000),
@@ -71,11 +75,14 @@ window.Webflow.push(() => {
     loopHomeNav();
   }
 
-  if (window.location.href.includes('/studio')) {
+  if (window.location.href.includes('/studio') || window.location.href.includes('/studio-v2')) {
     loadModelViewerScript();
     studioHeroParallax();
     loopArtStudio();
     loopBaseline();
+    swiperBaseline();
+    swiperStudioServices();
+    swiperStudioArtists();
   }
 
   if (window.location.href.includes('/residency')) {
