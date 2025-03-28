@@ -9,11 +9,23 @@ export function studioHeroParallax() {
       markers: false,
       trigger: '.section_studio-hero',
       scroller: '.main-content-wrapper',
-      start: '30% 50%',
+      start: '35% 50%',
       end: '120% 50%',
       scrub: true,
     },
-    y: '30rem',
+    y: '-20rem',
+  });
+
+  gsap.to('.studio-hero_layer', {
+    scrollTrigger: {
+      markers: false,
+      trigger: '.section_studio-hero',
+      scroller: '.main-content-wrapper',
+      start: '35% 50%',
+      end: '150% 50%',
+      scrub: true,
+    },
+    opacity: 0.2,
   });
 }
 

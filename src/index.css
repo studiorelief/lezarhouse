@@ -271,6 +271,11 @@
   background-color: #9ef668 !important;
 }
 
+#button-purple {
+  background-color: #a98bff !important;
+  /* background-image: linear-gradient(98deg, #ffd08b, 0% #a98bff, 50%); */
+}
+
 /* Logo Ecosystem - Dark mode */
 
 .w-mod-js.dark-mode .ecosystem-grid_cards-logo {
