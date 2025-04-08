@@ -38,6 +38,7 @@ import {
   swiperTestimonials,
 } from '$utils/swiper';
 import { /* cmsPlaylist, */ cmsPopup, svgCms } from '$utils/tricks';
+import { initMarker } from '$utils/marker';
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
@@ -54,6 +55,11 @@ window.Webflow.push(() => {
   ! Global
   */
   lenisScroll();
+  // Initialize Marker.io widget if URL contains 'webflow.io'
+
+  if (window.location.href.includes('webflow.io')) {
+    initMarker();
+  }
 
   /*
   ! Navbar
